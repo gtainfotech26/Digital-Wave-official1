@@ -81,7 +81,7 @@ const Contacts = () => {
     {
       icon: <FaMapMarkerAlt className="text-purple-500" size={24} />,
       title: "Location",
-      details: "Bangalore, India",
+      details: "Phulwari Sharif, Patna, Bihar – 801505, India",
       link: "https://maps.google.com",
       color: "bg-purple-50 border-purple-100"
     },
