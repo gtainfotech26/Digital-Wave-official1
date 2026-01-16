@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { FaWhatsapp, FaBars, FaTimes, FaHome, FaCogs, FaEnvelope, FaChevronDown } from 'react-icons/fa';
-import logo from '../assets/logo.jpg'
+import logo from '../assets/image/logo.jpg'
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
