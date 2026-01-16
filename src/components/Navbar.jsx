@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { FaWhatsapp, FaBars, FaTimes, FaHome, FaCogs, FaEnvelope, FaChevronDown } from 'react-icons/fa';
 import logo from '../assets/logo.jpg'
+
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [servicesOpen, setServicesOpen] = useState(false);
@@ -13,11 +14,14 @@ const Navbar = () => {
     { name: 'Brand Strategy', link: '/services/branding' }
   ];
 
+  const emailAddress = "gtainfotech89@gmail.com";
+  const whatsappNumber = "8603990820";
+
   return (
     <>
       {/* WhatsApp Floating Button */}
       <a 
-        href="https://wa.me/8603990820" 
+        href={`https://wa.me/${whatsappNumber}`} 
         target="_blank" 
         rel="noopener noreferrer"
         className="fixed bottom-6 right-6 z-50 bg-green-500 text-white p-4 rounded-full shadow-lg hover:bg-green-600 transition-all duration-300 animate-bounce"
@@ -33,8 +37,7 @@ const Navbar = () => {
             {/* Logo/Brand */}
             <div className="flex items-center space-x-3">
               <div className=" flex gap-2">
-
-                <img src={logo} alt=" " className='h-16  rounded-full' />
+                <img src={logo} alt="Digital Wave Logo" className='h-16 rounded-full' />
                 <div className="flex flex-col mt-2">
                   <h1 className="text-2xl font-bold tracking-wider bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
                     DIGITAL WAVE
@@ -42,15 +45,11 @@ const Navbar = () => {
                   <p className="text-xs text-gray-300 italic">Where Creativity Meets Technology</p>
                 </div>
               </div>
-              
             </div>
 
             {/* Desktop Navigation */}
             <div className="hidden md:flex items-center space-x-8">
-              <a 
-                href="/" 
-                className="flex items-center space-x-2 hover:text-cyan-300 transition-colors duration-200"
-              >
+              <a href="/" className="flex items-center space-x-2 hover:text-cyan-300 transition-colors duration-200">
                 <FaHome />
                 <span>Home</span>
               </a>
@@ -75,8 +74,9 @@ const Navbar = () => {
                 </div>
               </div>
 
+              {/* Updated Contact Us Link (Desktop) */}
               <a 
-                href="/contact" 
+                href={`mailto:${emailAddress}`}
                 className="flex items-center space-x-2 hover:text-cyan-300 transition-colors duration-200"
               >
                 <FaEnvelope />
@@ -84,7 +84,7 @@ const Navbar = () => {
               </a>
 
               <a 
-                href="https://wa.me/your-number" 
+                href={`https://wa.me/${whatsappNumber}`} 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="bg-green-500 hover:bg-green-600 px-6 py-2 rounded-full flex items-center space-x-2 transition-all duration-300"
@@ -146,8 +146,9 @@ const Navbar = () => {
                   )}
                 </div>
 
+                {/* Updated Contact Us Link (Mobile) */}
                 <a 
-                  href="/contact" 
+                  href={`mailto:${emailAddress}`}
                   className="flex items-center space-x-3 py-2 hover:text-cyan-300 transition-colors duration-200"
                   onClick={() => setIsOpen(false)}
                 >
@@ -156,7 +157,7 @@ const Navbar = () => {
                 </a>
 
                 <a 
-                  href="https://wa.me/8603990820" 
+                  href={`https://wa.me/${whatsappNumber}`} 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="bg-green-500 hover:bg-green-600 px-6 py-3 rounded-lg flex items-center justify-center space-x-2 transition-all duration-300 mt-4"
@@ -174,4 +175,4 @@ const Navbar = () => {
   );
 };
 
-export default Navbar;  
+export default Navbar;

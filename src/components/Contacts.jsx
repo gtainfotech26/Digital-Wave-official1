@@ -60,8 +60,8 @@ const Contacts = () => {
     {
       icon: <FaPhone className="text-blue-500" size={24} />,
       title: "Call Us",
-      details: "+91 98765 43210",
-      link: "tel:+919876543210",
+      details: "+91 8603990820",
+      link: "tel:+918603990820",
       color: "bg-blue-50 border-blue-100"
     },
     {
@@ -74,8 +74,8 @@ const Contacts = () => {
     {
       icon: <FaEnvelope className="text-red-500" size={24} />,
       title: "Email",
-      details: "hello@digitalwave.studio",
-      link: "mailto:hello@digitalwave.studio",
+      details: "gtainfotech89@gmail.com",
+      link: "mailto:gtainfotech89@gmail.com",
       color: "bg-red-50 border-red-100"
     },
     {
@@ -248,7 +248,7 @@ const Contacts = () => {
                     value={formData.phone}
                     onChange={handleChange}
                     className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-cyan-500 focus:ring-2 focus:ring-cyan-200 transition-all duration-300"
-                    placeholder="+91 98765 43210"
+                    placeholder="+91 8603990820"
                   />
                 </div>
 

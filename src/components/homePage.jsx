@@ -83,8 +83,8 @@ const HomePage = () => {
                             <a href="tel:+918603990820" className="hover:text-cyan-400 transition">
                                 +91 8603990820
                             </a>
-                            <a href="mailto:- drazamehclinic@gmail.com" className="hover:text-cyan-400 transition">
-                                drazamehclinic@gmail.com
+                            <a href="mailto:- gtainfotech89@gmail.com" className="hover:text-cyan-400 transition">
+                                gtainfotech89@gmail.com
                             </a>
                             <a
                                 href="https://wa.me/8603990820"
