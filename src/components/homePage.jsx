@@ -13,7 +13,7 @@ const HomePage = () => {
             <main>
                 {/* Hero Section - Attractive, modern, and engaging */}
                 <section
-                    className="relative min-h-screen bg-cover bg-center bg-fixed flex items-center justify-center"
+                    className="relative min-h-screen bg-cover bg-center bg-fixed flex items-center pb-10 justify-center"
                     style={{
                         backgroundImage:
                             "url('https://images.pexels.com/photos/29586675/pexels-photo-29586675.jpeg?auto=compress&cs=tinysrgb&w=1600')",
