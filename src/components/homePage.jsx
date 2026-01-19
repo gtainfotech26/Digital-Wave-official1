@@ -49,7 +49,7 @@ const HomePage = () => {
                                 Get in Touch
                             </a>
                             <a
-                                href="https://wa.me/8603990820"
+                                href="https://wa.me/+91-8603990820"
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="bg-green-500 text-white px-10 py-5 rounded-full text-xl font-bold shadow-2xl hover:bg-green-600 hover:scale-105 transition duration-300"

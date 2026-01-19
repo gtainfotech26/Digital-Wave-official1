@@ -15,7 +15,7 @@ const Navbar = () => {
   ];
 
   const emailAddress = "gtainfotech89@gmail.com";
-  const whatsappNumber = "8603990820";
+  const whatsappNumber = "+91-8603990820";
 
   return (
     <>
