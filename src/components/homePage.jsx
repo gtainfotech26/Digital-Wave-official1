@@ -3,12 +3,12 @@ import Navbar from './Navbar.jsx';
 import Services from './Services.jsx';
 import Contact from './Contacts.jsx';
 import { motion } from 'framer-motion';
-
+import logo from '../assets/image/logo.jpg'
 
 const HomePage = () => {
     return (
         <>
-            <Navbar />
+            
 
             <main>
                 {/* Hero Section - Attractive, modern, and engaging */}
@@ -63,7 +63,7 @@ const HomePage = () => {
                 {/* Services Section */}
                 <Services />
 
-           
+
                 <Contact />
 
 
@@ -73,12 +73,18 @@ const HomePage = () => {
                 {/* Simple Footer */}
                 <footer className="bg-gray-900 text-white py-16">
                     <div className="max-w-7xl mx-auto px-6 text-center">
-                        <h2 className="text-4xl font-black bg-gradient-to-r from-indigo-400 to-cyan-400 bg-clip-text text-transparent">
-                            DIGITAL WAVE STUDIO
-                        </h2>
-                        <p className="mt-4 text-lg text-gray-400">
-                            Where Creativity Meets Technology
-                        </p>
+                        <div className='gap-3 flex justify-center items-center'>
+                            <img src={logo} alt="Digital Wave Logo" className='h-36 rounded-full' />
+
+                           <div>
+                             <h2 className="text-4xl font-black bg-gradient-to-r from-indigo-400 to-cyan-400 bg-clip-text text-transparent">
+                                DIGITAL WAVE STUDIO
+                            </h2>
+                            <p className="mt-4 text-lg text-gray-400">
+                                Where Creativity Meets Technology
+                            </p>
+                           </div>
+                        </div>
                         <div className="mt-10 space-x-8 text-lg">
                             <a href="tel:+918603990820" className="hover:text-cyan-400 transition">
                                 +91 8603990820

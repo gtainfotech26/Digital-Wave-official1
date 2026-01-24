@@ -2,8 +2,11 @@ import React, { useState } from 'react';
 import { FaWhatsapp, FaBars, FaTimes, FaHome, FaCogs, FaEnvelope, FaChevronDown } from 'react-icons/fa';
 import logo from '../assets/image/logo.jpg'
 
+import { Link } from "react-router-dom";
+
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+
   const [servicesOpen, setServicesOpen] = useState(false);
 
   const servicesItems = [
@@ -20,9 +23,9 @@ const Navbar = () => {
   return (
     <>
       {/* WhatsApp Floating Button */}
-      <a 
-        href={`https://wa.me/${whatsappNumber}`} 
-        target="_blank" 
+      <a
+        href={`https://wa.me/${whatsappNumber}`}
+        target="_blank"
         rel="noopener noreferrer"
         className="fixed bottom-6 right-6 z-50 bg-green-500 text-white p-4 rounded-full shadow-lg hover:bg-green-600 transition-all duration-300 animate-bounce"
       >
@@ -33,7 +36,7 @@ const Navbar = () => {
       <nav className="sticky top-0 z-40 bg-gradient-to-r from-gray-900 to-blue-900 text-white shadow-lg">
         <div className="container mx-auto px-4 py-3">
           <div className="flex items-center justify-between">
-            
+
             {/* Logo/Brand */}
             <div className="flex items-center space-x-3">
               <div className=" flex gap-2">
@@ -53,7 +56,7 @@ const Navbar = () => {
                 <FaHome />
                 <span>Home</span>
               </a>
-              
+
               {/* Services Dropdown */}
               <div className="relative group">
                 <button className="flex items-center space-x-2 hover:text-cyan-300 transition-colors duration-200">
@@ -63,7 +66,7 @@ const Navbar = () => {
                 </button>
                 <div className="absolute left-0 mt-2 w-64 bg-gray-800 rounded-lg shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300">
                   {servicesItems.map((service, index) => (
-                    <a
+                    <a 
                       key={index}
                       href={service.link}
                       className="block px-4 py-3 hover:bg-blue-700 hover:text-white border-b border-gray-700 last:border-b-0 transition-colors duration-200"
@@ -73,9 +76,14 @@ const Navbar = () => {
                   ))}
                 </div>
               </div>
-
+              <Link to='/about'
+                className="flex items-center space-x-2 hover:text-cyan-300 transition-colors duration-200"
+              >
+                <FaEnvelope />
+                <span>About</span>
+              </Link>
               {/* Updated Contact Us Link (Desktop) */}
-              <a 
+              <a
                 href={`mailto:${emailAddress}`}
                 className="flex items-center space-x-2 hover:text-cyan-300 transition-colors duration-200"
               >
@@ -83,9 +91,9 @@ const Navbar = () => {
                 <span>Contact Us</span>
               </a>
 
-              <a 
-                href={`https://wa.me/${whatsappNumber}`} 
-                target="_blank" 
+              <a
+                href={`https://wa.me/${whatsappNumber}`}
+                target="_blank"
                 rel="noopener noreferrer"
                 className="bg-green-500 hover:bg-green-600 px-6 py-2 rounded-full flex items-center space-x-2 transition-all duration-300"
               >
@@ -95,7 +103,7 @@ const Navbar = () => {
             </div>
 
             {/* Mobile Menu Button */}
-            <button 
+            <button
               className="md:hidden text-2xl focus:outline-none"
               onClick={() => setIsOpen(!isOpen)}
             >
@@ -109,8 +117,8 @@ const Navbar = () => {
           <div className="md:hidden bg-gray-800 border-t border-gray-700">
             <div className="container mx-auto px-4 py-4">
               <div className="flex flex-col space-y-4">
-                <a 
-                  href="/" 
+                <a
+                  href="/"
                   className="flex items-center space-x-3 py-2 hover:text-cyan-300 transition-colors duration-200"
                   onClick={() => setIsOpen(false)}
                 >
@@ -119,7 +127,7 @@ const Navbar = () => {
                 </a>
 
                 <div className="border-t border-gray-700 pt-2">
-                  <button 
+                  <button
                     className="flex items-center justify-between w-full py-2"
                     onClick={() => setServicesOpen(!servicesOpen)}
                   >
@@ -129,7 +137,7 @@ const Navbar = () => {
                     </div>
                     <FaChevronDown className={`transition-transform duration-300 ${servicesOpen ? 'rotate-180' : ''}`} />
                   </button>
-                  
+
                   {servicesOpen && (
                     <div className="pl-8 mt-2 space-y-2">
                       {servicesItems.map((service, index) => (
@@ -147,7 +155,7 @@ const Navbar = () => {
                 </div>
 
                 {/* Updated Contact Us Link (Mobile) */}
-                <a 
+                <a
                   href={`mailto:${emailAddress}`}
                   className="flex items-center space-x-3 py-2 hover:text-cyan-300 transition-colors duration-200"
                   onClick={() => setIsOpen(false)}
@@ -156,9 +164,9 @@ const Navbar = () => {
                   <span>Contact Us</span>
                 </a>
 
-                <a 
-                  href={`https://wa.me/${whatsappNumber}`} 
-                  target="_blank" 
+                <a
+                  href={`https://wa.me/${whatsappNumber}`}
+                  target="_blank"
                   rel="noopener noreferrer"
                   className="bg-green-500 hover:bg-green-600 px-6 py-3 rounded-lg flex items-center justify-center space-x-2 transition-all duration-300 mt-4"
                   onClick={() => setIsOpen(false)}
