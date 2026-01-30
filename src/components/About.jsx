@@ -15,7 +15,7 @@ const About = () => {
     },
     aboutPara1: {
       en: 'Grow your business with Digital Wave Studio. We create modern, impactful, and user-friendly digital solutions that give your business a distinct online presence. From website development to branding and digital marketing, we transform your ideas into tangible results.',
-      hi: 'Digital Wave Studio के साथ अपना व्यवसाय बढ़ाइए म आधुनिक, प्रभावशाली और उपयोगकर्ता‑अनुकूल डिजिटल समाधान तैयार करते हैं, जो आपके व्यवसाय को ऑनलाइन एक अलग पहचान दिलाते हैं। वेबसाइट निर्माण से लेकर ब्रांडिंग और डिजिटल प्रचार तक, हम आपके विचारों को वास्तविक परिणामों में बदलते हैं' },
+      hi: 'Digital Wave Studio के साथ अपना व्यवसाय बढ़ाइए हम आधुनिक, प्रभावशाली और उपयोगकर्ता‑अनुकूल डिजिटल समाधान तैयार करते हैं, जो आपके व्यवसाय को ऑनलाइन एक अलग पहचान दिलाते हैं। वेबसाइट निर्माण से लेकर ब्रांडिंग और डिजिटल प्रचार तक, हम आपके विचारों को वास्तविक परिणामों में बदलते हैं' },
     aboutPara2: {
       en: 'Digital Wave Studio is a creative digital agency dedicated to helping businesses grow online. We focus on creating modern, responsive, and result‑oriented digital solutions that build trust and drive growth. We work with startups, small businesses, and growing brands to transform ideas into professional digital experiences using the latest technologies and creative strategies.',
       hi: 'Digital Wave Studio एक रचनात्मक डिजिटल एजेंसी है, जो व्यवसायों को ऑनलाइन आगे बढ़ाने में सहायता करती है। हम आधुनिक, मोबाइल‑अनुकूल और परिणाम‑केंद्रित डिजिटल समाधान बनाते हैं, जो विश्वास पैदा करते हैं और विकास को बढ़ावा देते हैं। स्टार्टअप, छोटे व्यवसायों और बढ़ते हुए ब्रांड्स के साथ मिलकर काम करते हैं और उनके विचारों को नवीनतम तकनीक और रचनात्मक रणनीतियों के माध्यम से पेशेवर डिजिटल अनुभवों में बदलते हैं।' },
@@ -257,11 +257,11 @@ const About = () => {
           </motion.p>
           <div className="space-y-4 text-lg mb-12">
             <p>Email: gtainfotech89@gmail.com</p>
-            <p>Phone: +91‑8603990820</p>
+            <p>Phone: +91‑8603990820</p> 
           </div>
           <div className="flex flex-col sm:flex-row gap-6 justify-center">
             <motion.a
-              href="mailto:info@digitalwavestudio.com"
+              href="mailto:gtainfotech89@gmail.com"
               whileHover={{ scale: 1.1 }}
               className="px-10 py-5 bg-white text-indigo-600 font-bold rounded-full shadow-lg hover:bg-gray-100 transition"
             >
