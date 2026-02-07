@@ -4,8 +4,21 @@ import Services from './Services.jsx';
 import Contact from './Contacts.jsx';
 import { motion } from 'framer-motion';
 import logo from '../assets/image/logo.jpg'
+import { useEffect } from "react";
+import { useLocation } from "react-router-dom";
 
 const HomePage = () => {
+    const location = useLocation();
+
+useEffect(() => {
+  if (location.hash) {
+    const el = document.querySelector(location.hash);
+    if (el) {
+      el.scrollIntoView({ behavior: "smooth" });
+    }
+  }
+}, [location]);
+
     return (
         <>
             
@@ -71,41 +84,58 @@ const HomePage = () => {
 
 
                 {/* Simple Footer */}
-                <footer className="bg-gray-900 text-white py-16">
-                    <div className="max-w-7xl mx-auto px-6 text-center">
-                        <div className='gap-3 flex justify-center items-center'>
-                            <img src={logo} alt="Digital Wave Logo" className='h-36 rounded-full' />
+               <footer className="bg-gray-900 text-white py-12 md:py-16">
+  <div className="max-w-7xl mx-auto px-6">
+    {/* Upper Section: Logo & Branding */}
+    <div className="flex flex-col md:flex-row justify-center items-center gap-6 text-center md:text-left">
+      <img 
+        src={logo} 
+        alt="Digital Wave Logo" 
+        className="h-24 w-24 md:h-36 md:w-36 rounded-full object-cover shadow-lg border-2 border-indigo-500/30" 
+      />
 
-                           <div>
-                             <h2 className="text-4xl font-black bg-gradient-to-r from-indigo-400 to-cyan-400 bg-clip-text text-transparent">
-                                DIGITAL WAVE STUDIO
-                            </h2>
-                            <p className="mt-4 text-lg text-gray-400">
-                                Where Creativity Meets Technology
-                            </p>
-                           </div>
-                        </div>
-                        <div className="mt-10 space-x-8 text-lg">
-                            <a href="tel:+918603990820" className="hover:text-cyan-400 transition">
-                                +91 8603990820
-                            </a>
-                            <a href="mailto:- gtainfotech89@gmail.com" className="hover:text-cyan-400 transition">
-                                gtainfotech89@gmail.com
-                            </a>
-                            <a
-                                href="https://wa.me/8603990820"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="hover:text-cyan-400 transition"
-                            >
-                                WhatsApp
-                            </a>
-                        </div>
-                        <p className="mt-10 text-gray-500">
-                            © {new Date().getFullYear()} Digital Wave Studio. All rights reserved.
-                        </p>
-                    </div>
-                </footer>
+      <div className="flex flex-col">
+        <h2 className="text-3xl md:text-4xl font-black bg-gradient-to-r from-indigo-400 to-cyan-400 bg-clip-text text-transparent">
+          DIGITAL WAVE STUDIO
+        </h2>
+        <p className="mt-2 md:mt-4 text-base md:text-lg text-gray-400">
+          Where Creativity Meets Technology
+        </p>
+      </div>
+    </div>
+
+    {/* Middle Section: Links */}
+    <div className="mt-10 flex flex-col md:flex-row justify-center items-center gap-4 md:gap-8 text-center">
+      <a href="tel:+918603990820" className="text-gray-300 hover:text-cyan-400 transition-colors duration-300 flex items-center gap-2">
+        <span className="md:hidden">📞</span> +91 8603990820
+      </a>
+      
+      <span className="hidden md:block text-gray-700">|</span>
+      
+      <a href="mailto:gtainfotech89@gmail.com" className="text-gray-300 hover:text-cyan-400 transition-colors duration-300 break-all">
+        gtainfotech89@gmail.com
+      </a>
+
+      <span className="hidden md:block text-gray-700">|</span>
+
+      <a
+        href="https://wa.me/8603990820"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="text-gray-300 hover:text-green-400 transition-colors duration-300"
+      >
+        WhatsApp
+      </a>
+    </div>
+
+    {/* Bottom Section: Copyright */}
+    <div className="mt-12 pt-8 border-t border-gray-800 text-center">
+      <p className="text-sm md:text-base text-gray-500">
+        © {new Date().getFullYear()} <span className="text-gray-400 font-semibold">Digital Wave Studio</span>. All rights reserved.
+      </p>
+    </div>
+  </div>
+</footer>
             </main>
 
 

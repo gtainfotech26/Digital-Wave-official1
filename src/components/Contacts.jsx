@@ -13,6 +13,7 @@ import {
   FaCheckCircle,
   FaExclamationCircle
 } from 'react-icons/fa';
+import emailjs from '@emailjs/browser';
 
 const Contacts = () => {
   const [formData, setFormData] = useState({
@@ -25,6 +26,45 @@ const Contacts = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState(null);
 
+
+  const handleSubmit = (e) => {
+  e.preventDefault();
+  setIsSubmitting(true);
+
+  // इन 3 IDs को दोबारा चेक करें (EmailJS Dashboard से)
+  const serviceID = "service_t4skgxe"; 
+  const templateID = "template_6lyny0w";
+  const publicKey = "E9TN_dkvR2TCRhvF-"; 
+
+  emailjs.send(
+    serviceID,
+    templateID,
+    {
+      from_name: formData.name,      // अगर टेम्पलेट में {{from_name}} है
+      to_name: "Digital Wave Studio",
+      user_email: formData.email,    // अगर टेम्पलेट में {{user_email}} है
+      user_phone: formData.phone,
+      selected_service: formData.service,
+      message: formData.message,
+    },
+    publicKey
+  )
+  .then((response) => {
+    console.log('SUCCESS!', response.status, response.text);
+    setIsSubmitting(false);
+    setSubmitStatus('success');
+    setFormData({ name: '', email: '', phone: '', service: '', message: '' });
+  })
+  .catch((err) => {
+    console.error('FAILED...', err);
+    setIsSubmitting(false);
+    alert("Error: " + err.text);
+  });
+};
+
+
+
+
   const handleChange = (e) => {
     setFormData({
       ...formData,
@@ -32,29 +72,7 @@ const Contacts = () => {
     });
   };
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    setIsSubmitting(true);
-
-    // Simulate API call
-    setTimeout(() => {
-      console.log('Form submitted:', formData);
-      setIsSubmitting(false);
-      setSubmitStatus('success');
-
-      // Reset form after success
-      setFormData({
-        name: '',
-        email: '',
-        phone: '',
-        service: '',
-        message: ''
-      });
-
-      // Reset status after 5 seconds
-      setTimeout(() => setSubmitStatus(null), 5000);
-    }, 1500);
-  };
+  
 
   const contactInfo = [
     {
