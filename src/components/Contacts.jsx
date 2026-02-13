@@ -31,24 +31,22 @@ const Contacts = () => {
   e.preventDefault();
   setIsSubmitting(true);
 
-  // इन 3 IDs को दोबारा चेक करें (EmailJS Dashboard से)
-  const serviceID = "service_t4skgxe"; 
-  const templateID = "template_6lyny0w";
-  const publicKey = "E9TN_dkvR2TCRhvF-"; 
 
-  emailjs.send(
-    serviceID,
-    templateID,
-    {
-      from_name: formData.name,      // अगर टेम्पलेट में {{from_name}} है
-      to_name: "Digital Wave Studio",
-      user_email: formData.email,    // अगर टेम्पलेट में {{user_email}} है
-      user_phone: formData.phone,
-      selected_service: formData.service,
-      message: formData.message,
-    },
-    publicKey
-  )
+
+emailjs.send(
+  import.meta.env.VITE_EMAILJS_SERVICE_ID,
+  import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+  {
+    from_name: formData.name,
+    to_name: "Digital Wave Studio",
+    user_email: formData.email,
+    user_phone: formData.phone,
+    selected_service: formData.service,
+    message: formData.message,
+  },
+  import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+)
+
   .then((response) => {
     console.log('SUCCESS!', response.status, response.text);
     setIsSubmitting(false);
